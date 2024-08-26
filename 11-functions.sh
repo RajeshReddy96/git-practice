@@ -2,9 +2,15 @@
 USERID=$(id -u)
 
 VALIDATE(){
-    echo "exit status: $1"
-
-}if [ $USERID -ne 0 ]
+    if [ $1 -ne 0 ]
+    then 
+        echo "$2 is failed"
+        exit 1
+    else
+        echo "$2 is success"
+    fi
+}
+if [ $USERID -ne 0 ]
 then 
     echo "please run this script with root priviliges"
     exit 1
@@ -12,7 +18,7 @@ fi
 
 dnf list installed git
 
-VALIDATE $?
+VALIDATE $? "LISTING git"
 
 # if [ $? -ne 0 ]
 # then 
