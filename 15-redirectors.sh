@@ -38,7 +38,8 @@ CHECK_ROOT
 if [ $# -eq 0 ]
 then 
     USAGE
-if
+fi
+
 for package in $@  #$@ refers to all arguments passed to it
 do 
     dnf list installed $package &>>$LOG_FILE
