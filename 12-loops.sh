@@ -1,4 +1,6 @@
 #!/bin/bash
 
-echo "1"
-echo "2"
+for i in {0..1000}
+do 
+    echo $i
+done
